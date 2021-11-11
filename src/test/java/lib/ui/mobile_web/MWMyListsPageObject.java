@@ -10,6 +10,7 @@ public class MWMyListsPageObject extends MyListsPageObject {
     FOLDER_BY_NAME_TPL = "xpath://lib.ui.android.widget.TextView[@text='{FOLDER_NAME}']";
     ARTICLE_BY_TITLE_TPL = "xpath://ul[contains(@class,'mw-mf-watchlist-page-list')]//h3[contains(text(),'{TITLE}')]";
     REMOVE_FROM_SAVED_BUTTON = "xpath://ul[contains(@class,'mw-mf-watchlist-page-list')]//h3[contains(text(),'{TITLE}')]/../../a[contains(@class,'watched')]";
+    LIST_ELEMENT = "css:li[class='page-summary with-watchstar";
   }
 
   public MWMyListsPageObject(RemoteWebDriver driver) {

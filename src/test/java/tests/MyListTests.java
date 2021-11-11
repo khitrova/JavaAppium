@@ -63,32 +63,60 @@ public class MyListTests extends CoreTestCase {
     SearchPageObject searchPageObject =  SearchPageObjectFactory.get(driver);
     searchPageObject.initSearchInput();
     searchPageObject.typeSearchLine("Java");
-    searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+    searchPageObject.clickByArticleWithSubstring("bject-oriented programming language");
     ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
     articlePageObject.waitForTitleElement();
     String firstArticleTitle = articlePageObject.getArticleTitle();
-    String nameOfFolder = "Learning programming";
-    articlePageObject.addArticleToMyList(nameOfFolder);
+    if (Platform.getInstance().isAndroid()) {
+      articlePageObject.addArticleToMyList(nameOfFolder);
+    } else {
+      articlePageObject.addArticleToMySaved();
+    }
+    if (Platform.getInstance().isMW()){
+      AuthorizationPageObject auth = new AuthorizationPageObject(driver);
+      auth.clickAuthButton();
+      auth.enterLoginData(login,password);
+      auth.submitForm();
+
+      articlePageObject.waitForTitleElement();
+      assertEquals("We are not on the same page after login",
+              firstArticleTitle,
+              articlePageObject.getArticleTitle());
+    }
+
     articlePageObject.closeArticle();
+
     searchPageObject.initSearchInput();
-    searchPageObject.typeSearchLine("Java");
-    searchPageObject.clickByArticleWithSubstring("Island of Indonesia");
+    searchPageObject.typeSearchLine("Android");
+    searchPageObject.clickByArticleWithSubstring("operating system");
     String secondArticleName = articlePageObject.getArticleTitle();
-    articlePageObject.addArticleToExistingList(nameOfFolder);
+    if (Platform.getInstance().isAndroid()) {
+      articlePageObject.addArticleToExistingList(nameOfFolder);
+    } else{
+      articlePageObject.addArticleToMySaved();
+    }
     articlePageObject.closeArticle();
+
     NavigationUI navigationUI = NavigationUIPageObjectFactory.get(driver);
+    navigationUI.openNavigation();
     navigationUI.clickMyLists();
     MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
-    myListsPageObject.openFolderByName(nameOfFolder);
+    if (Platform.getInstance().isAndroid()) {
+      myListsPageObject.openFolderByName(nameOfFolder);
+    }
     myListsPageObject.swipeByArticleToDelete(firstArticleTitle);
-    myListsPageObject.openSavedArticle("island of Indonesia");
-    String savedArticleName = articlePageObject.getArticleTitle();
-
-    Assert.assertEquals(
-            "Article name " +savedArticleName+" is not equal to expected "+secondArticleName,
-            savedArticleName,
-            secondArticleName
-    );
+    String savedArticleName;
+    if (Platform.getInstance().isAndroid()) {
+      myListsPageObject.openSavedArticle("sland");
+      savedArticleName = articlePageObject.getArticleTitle();
+    } else{
+      savedArticleName = myListsPageObject.getSavedArticleTitle();
+    }
+      Assert.assertEquals(
+              "Article name " + savedArticleName + " is not equal to expected " + secondArticleName,
+              savedArticleName,
+              secondArticleName
+      );
 
   }
 }

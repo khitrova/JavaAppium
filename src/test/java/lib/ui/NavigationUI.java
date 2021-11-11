@@ -20,7 +20,7 @@ abstract public class NavigationUI extends MainPageObject{
       this.tryClickElementsWithFewAttenpts(
               MY_LISTS_LINK,
               "Cannot find 'My lists' button ",
-              5
+              10
       );
     } else {
       this.waitForElementAndClick(

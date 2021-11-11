@@ -2,6 +2,7 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import lib.Platform;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class MyListsPageObject extends MainPageObject{
@@ -10,7 +11,8 @@ abstract public class MyListsPageObject extends MainPageObject{
   MENU_SORT_ELEMENTS,
   FOLDER_BY_NAME_TPL,
   ARTICLE_BY_TITLE_TPL,
-  REMOVE_FROM_SAVED_BUTTON;
+  REMOVE_FROM_SAVED_BUTTON,
+  LIST_ELEMENT;
 
   public MyListsPageObject(RemoteWebDriver driver) {
     super(driver);
@@ -95,5 +97,15 @@ abstract public class MyListsPageObject extends MainPageObject{
             "Cannot find saved article",
             5
     );
+  }
+
+  public String getSavedArticleTitle(){
+  WebElement element =   waitForElementPresent(
+            LIST_ELEMENT,
+            "Cannot find list element",
+            1
+    );
+    String title = element.getAttribute("title");
+    return title;
   }
 }

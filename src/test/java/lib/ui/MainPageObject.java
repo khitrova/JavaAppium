@@ -242,7 +242,7 @@ public class MainPageObject {
   public void scrollMainPageUp(){
     if (Platform.getInstance().isMW()){
       JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
-      JSExecutor.executeScript("window.scrollBy(0, 250");
+      JSExecutor.executeScript("window.scrollBy(0, 250)");
     } else {
       System.out.println("Method scrollMainPageUp does nothing for platform "+ Platform.getInstance().getPlatformVar());
     }

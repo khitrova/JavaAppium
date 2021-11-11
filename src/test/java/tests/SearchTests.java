@@ -3,6 +3,7 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
 import lib.ui.factories.SearchPageObjectFactory;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -36,7 +37,7 @@ public class SearchTests extends CoreTestCase {
     String searchLine = "Linkin Park discography";
     searchPageObject.typeSearchLine(searchLine);
     int amountOfSearchElements =searchPageObject.getAmountOfFoundArticles();
-    assertTrue(
+    Assert.assertTrue(
             "Found too few results",
             amountOfSearchElements>0
     );
@@ -68,7 +69,7 @@ public class SearchTests extends CoreTestCase {
     searchPageObject.initSearchInput();
     searchPageObject.typeSearchLine("Java");
     int amountOfSearchElements =searchPageObject.getAmountOfFoundArticles();
-    assertTrue(
+    Assert.assertTrue(
             "Found too few results",
             amountOfSearchElements>0
     );
@@ -84,11 +85,11 @@ public class SearchTests extends CoreTestCase {
     searchPageObject.initSearchInput();
     searchPageObject.typeSearchLine(keyword);
     int amountOfSearchElements =searchPageObject.getAmountOfFoundArticles();
-    assertTrue(
+    Assert.assertTrue(
             "Found too few results",
             amountOfSearchElements>0
     );
-    assertTrue(
+    Assert.assertTrue(
             "Not all elements contains keyword " + keyword,
             searchPageObject.assertResultsContainKeyword(keyword));
   }
@@ -107,7 +108,7 @@ public class SearchTests extends CoreTestCase {
     searchPageObject.initSearchInput();
     searchPageObject.typeSearchLine(keyword);
     int amountOfSearchElements =searchPageObject.getAmountOfFoundArticles();
-    assertTrue(
+    Assert.assertTrue(
             "Found too few results",
             amountOfSearchElements>=3
     );

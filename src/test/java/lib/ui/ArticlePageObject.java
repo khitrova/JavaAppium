@@ -34,10 +34,18 @@ abstract public class ArticlePageObject extends MainPageObject{
   }
 
   public void instantTitleCheck() {
-    this.assertElementPresent(
-            "org.wikipedia:id/view_page_title_text",
-            "Element not found"
-    );
+    if (Platform.getInstance().isAndroid()){
+      this.assertElementPresent(
+              "org.wikipedia:id/view_page_title_text",
+              "Element not found"
+      );
+    } else{
+      this.assertElementPresent(
+              TITLE,
+              "Element not found"
+      );
+    }
+
   }
 
   public String getArticleTitle() {

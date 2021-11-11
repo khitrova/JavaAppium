@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class MainPageObject {
@@ -103,6 +104,19 @@ public class MainPageObject {
       }
     }
 
+    return (allResultsHasMatch == amount);
+  }
+
+  public boolean checkListElementContainsString(String locator, String keyword){
+     By by = this.getLocatorByString(locator);
+    List<WebElement> elements = driver.findElements(by);
+    int amount = elements.size();
+    int allResultsHasMatch = 0;
+    for (WebElement searchResult : elements) {
+        if (searchResult.getAttribute("title").toLowerCase().contains(keyword)){
+        allResultsHasMatch++;
+      }
+    }
     return (allResultsHasMatch == amount);
   }
 
@@ -251,7 +265,7 @@ public class MainPageObject {
     return getAmountOfElements(locator)>0;
   }
 
-  public void tryClickElementsWithFewAttenpts(String locator, String errorMessage, int amountOfAttempts){
+  public void tryClickElementsWithFewAttempts(String locator, String errorMessage, int amountOfAttempts){
     int currentAttempts = 0;
     boolean needMoreAttempts = true;
 

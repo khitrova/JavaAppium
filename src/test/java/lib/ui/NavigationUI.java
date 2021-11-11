@@ -1,8 +1,6 @@
 package lib.ui;
 
-import io.appium.java_client.AppiumDriver;
 import lib.Platform;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class NavigationUI extends MainPageObject{
@@ -17,7 +15,7 @@ abstract public class NavigationUI extends MainPageObject{
 
   public void clickMyLists() {
     if (Platform.getInstance().isMW()) {
-      this.tryClickElementsWithFewAttenpts(
+      this.tryClickElementsWithFewAttempts(
               MY_LISTS_LINK,
               "Cannot find 'My lists' button ",
               10

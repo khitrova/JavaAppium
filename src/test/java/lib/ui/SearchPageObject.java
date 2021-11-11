@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -109,12 +110,18 @@ abstract public class SearchPageObject extends MainPageObject {
   }
 
   public boolean assertResultsContainKeyword(String keyword) {
+    if (Platform.getInstance().isAndroid()){
+
     return this.checkListElementsContainsString(
                     SEARCH_RESULT_ELEMENT,
                     By.id(SEARCH_RESULT_LIST_ELEMENT),
                     keyword
     );
+  }else{
+      return this.checkListElementContainsString(SEARCH_RESULT_ELEMENT, keyword);
+    }
   }
+
   public void waitForElementByTitleAndDescription(String title, String description){
 
     String searchResultXpath = getResultSearchElement(title,description);

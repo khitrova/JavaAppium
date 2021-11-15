@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -10,13 +12,20 @@ import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-
+@Epic("Tests with saved lists")
 public class MyListTests extends CoreTestCase {
 
   private static final String nameOfFolder = "Learning programming";
   private static final String login = "Fjushka";
   private static final String password = "fwLrz4qLXnR4m9W";
+
+
   @Test
+  @Features(value = {@Feature(value ="Search"),@Feature(value = "Article"),@Feature(value = "Saved List"),@Feature(value = "Login"),@Feature(value = "Saved folder (mobile)")})
+  @DisplayName("Saving article to the saved list")
+  @Description("Search for article, add it to saved list (and creating a folder for android app or logging in for mobile web), then removing the article from the list")
+  @Step("Starting test SaveFirstArticleToMyList")
+  @Severity(value = SeverityLevel.CRITICAL)
   public void testSaveFirstArticleToMyList() {
 
     SearchPageObject searchPageObject =  SearchPageObjectFactory.get(driver);
@@ -58,6 +67,11 @@ public class MyListTests extends CoreTestCase {
   }
 
   @Test
+  @Features(value = {@Feature(value ="Search"),@Feature(value = "Article"),@Feature(value = "Saved List"),@Feature(value = "Login"),@Feature(value = "Saved folder (mobile)")})
+  @DisplayName("Saving two articles to the saved list")
+  @Description("Search for article, add it to saved list (and creating a folder for android app or logging in for mobile web), adding another article, then removing one of them from the list")
+  @Step("Starting test SavingTwoArticles")
+  @Severity(value = SeverityLevel.CRITICAL)
   public void testSavingTwoArticles(){
 
     SearchPageObject searchPageObject =  SearchPageObjectFactory.get(driver);

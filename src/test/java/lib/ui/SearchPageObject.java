@@ -93,7 +93,7 @@ abstract public class SearchPageObject extends MainPageObject {
   public void assertThereIsNoResultOfSearch(){
     this.assertElementNotPresent(SEARCH_RESULT_ELEMENT,"We suppose not to find any results");
   }
-
+@Step("Making sure that search result has text '{expected}'")
   public void assertSearchElementHasText(String expected){
     this.assertElementHasText(
             this.waitForElementPresent(
@@ -106,7 +106,7 @@ abstract public class SearchPageObject extends MainPageObject {
             5
     );
   }
-
+@Step("Check search results are not present on the page")
   public void assertSearchResultsAbsent(){
     this.waitForElementNotPresent(
             SEARCH_RESULT_ELEMENT,
@@ -114,7 +114,7 @@ abstract public class SearchPageObject extends MainPageObject {
             5
     );
   }
-
+  @Step("Making sure that all search results have text '{expected}'")
   public boolean assertResultsContainKeyword(String keyword) {
     if (Platform.getInstance().isAndroid()){
 
@@ -128,6 +128,7 @@ abstract public class SearchPageObject extends MainPageObject {
     }
   }
 
+  @Step("Waiting for search result with title '{title}' and description '{description}'")
   public void waitForElementByTitleAndDescription(String title, String description){
 
     String searchResultXpath = getResultSearchElement(title,description);

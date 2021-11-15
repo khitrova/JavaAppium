@@ -58,7 +58,11 @@ public class ArticleTests extends CoreTestCase {
   }
 
   @Test
+  @Features(value = {@Feature(value ="Search"),@Feature(value = "Article")})
   @Severity(value = SeverityLevel.BLOCKER)
+  @DisplayName("Instant compare article title with the expected one")
+  @Description("We open 'Java Object-oriented programming language' and make sure the title is expected instantly")
+  @Step("Starting test Assert title")
   public void testAssertTitle(){
     SearchPageObject searchPageObject =  SearchPageObjectFactory.get(driver);
     searchPageObject.initSearchInput();

@@ -80,7 +80,7 @@ public class CoreTestCase{
     try
     {
       Properties prop = new Properties();
-      FileOutputStream fos = new FileOutputStream(path + "/envronment.properties");
+      FileOutputStream fos = new FileOutputStream(path + "/environment.properties");
       prop.setProperty("Environment", Platform.getInstance().getPlatformVar());
       prop.store(fos,"See https://github.com/allure-framework/allure-app/wiki/Environment");
       fos.close();

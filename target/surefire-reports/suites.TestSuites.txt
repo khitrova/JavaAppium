@@ -1,377 +1,68 @@
 -------------------------------------------------------------------------------
 Test set: suites.TestSuites
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 229.398 sec <<< FAILURE!
-testAssertTitle(tests.ArticleTests)  Time elapsed: 13.955 sec  <<< ERROR!
-java.lang.IllegalArgumentException: Cannot fet type of locator. Locator: org.wikipedia:id/view_page_title_text
-	at lib.ui.MainPageObject.getLocatorByString(MainPageObject.java:200)
-	at lib.ui.MainPageObject.getAmountOfElements(MainPageObject.java:160)
-	at lib.ui.MainPageObject.assertElementPresent(MainPageObject.java:183)
-	at lib.ui.ArticlePageObject.instantTitleCheck(ArticlePageObject.java:34)
-	at tests.ArticleTests.testAssertTitle(ArticleTests.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:177)
-	at junit.framework.TestCase.runBare(TestCase.java:142)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:130)
-	at junit.framework.TestSuite.runTest(TestSuite.java:241)
-	at junit.framework.TestSuite.run(TestSuite.java:236)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-
-testSavingTwoArticles(tests.MyListTests)  Time elapsed: 22.655 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 5 seconds: Cannot find button to open article options 
+Tests run: 15, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 78.603 s <<< FAILURE! - in suites.TestSuites
+testSaveFirstArticleToMyList(tests.MyListTests)  Time elapsed: 9.995 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Timed out after 1 seconds: Cannot find and click auth button
 
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: 14404044-f114-4db5-9136-19cd086ee33b
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at lib.ui.MainPageObject.waitForElementPresent(MainPageObject.java:28)
-	at lib.ui.MainPageObject.waitForElementAndClick(MainPageObject.java:41)
-	at lib.ui.ArticlePageObject.addArticleToMyList(ArticlePageObject.java:54)
-	at tests.MyListTests.testSavingTwoArticles(MyListTests.java:49)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:177)
-	at junit.framework.TestCase.runBare(TestCase.java:142)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:130)
-	at junit.framework.TestSuite.runTest(TestSuite.java:241)
-	at junit.framework.TestSuite.run(TestSuite.java:236)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 436 milliseconds
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61564}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}), userDataDir=C:\Users\khitr\AppData\Local\Temp\scoped_dir16908_317718325}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.69, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: c832c0460ae77b3a5f5e82ee61b8ca47
+	at tests.MyListTests.testSaveFirstArticleToMyList_aroundBody0(MyListTests.java:45)
+	at tests.MyListTests.testSaveFirstArticleToMyList(MyListTests.java:31)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"a.mw-ui-button.mw-ui-progressive"}
+  (Session info: chrome=95.0.4638.69)
+  (Driver info: chromedriver=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: 14404044-f114-4db5-9136-19cd086ee33b
-*** Element info: {Using=xpath, value=//lib.ui.android.widget.ImageView[@content-desc='More options']}
-	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:899)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:178)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-	... 38 more
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61564}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}), userDataDir=C:\Users\khitr\AppData\Local\Temp\scoped_dir16908_317718325}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.69, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: c832c0460ae77b3a5f5e82ee61b8ca47
+*** Element info: {Using=css selector, value=a.mw-ui-button.mw-ui-progressive}
+	at tests.MyListTests.testSaveFirstArticleToMyList_aroundBody0(MyListTests.java:45)
+	at tests.MyListTests.testSaveFirstArticleToMyList(MyListTests.java:31)
 
-testSaveFirstArticleToMyList(tests.MyListTests)  Time elapsed: 21.921 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 5 seconds: Cannot find button to open article options 
+testSearchElementContainsText(tests.SearchTests)  Time elapsed: 7.885 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds: Can't find text Search Wikipedia
 
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: fd5b3009-6595-4500-bac5-8b6129238722
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at lib.ui.MainPageObject.waitForElementPresent(MainPageObject.java:28)
-	at lib.ui.MainPageObject.waitForElementAndClick(MainPageObject.java:41)
-	at lib.ui.ArticlePageObject.addArticleToMyList(ArticlePageObject.java:54)
-	at tests.MyListTests.testSaveFirstArticleToMyList(MyListTests.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:177)
-	at junit.framework.TestCase.runBare(TestCase.java:142)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:130)
-	at junit.framework.TestSuite.runTest(TestSuite.java:241)
-	at junit.framework.TestSuite.run(TestSuite.java:236)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 335 milliseconds
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61799}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}), userDataDir=C:\Users\khitr\AppData\Local\Temp\scoped_dir11544_226612210}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.69, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: ad5a8f19f9eead1e93030a034c559e5c
+	at tests.SearchTests.testSearchElementContainsText_aroundBody8(SearchTests.java:88)
+	at tests.SearchTests.testSearchElementContainsText(SearchTests.java:87)
+
+testResultsTitleAndDescription(tests.SearchTests)  Time elapsed: 8.989 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds: Result has wrong title or description compared to String and Wikimedia disambiguation page
+
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61891}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}), userDataDir=C:\Users\khitr\AppData\Local\Temp\scoped_dir11056_442103585}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.69, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 077c28f9f486003280025ca31b0c1dd7
+	at tests.SearchTests.testResultsTitleAndDescription_aroundBody14(SearchTests.java:157)
+	at tests.SearchTests.testResultsTitleAndDescription(SearchTests.java:141)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//lib.ui.android.widget.TextView[@text='Wikimedia disambiguation page']/../lib.ui.android.widget.TextView[@text='String']"}
+  (Session info: chrome=95.0.4638.69)
+  (Driver info: chromedriver=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}),platform=Windows NT 10.0.19043 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 28 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
 System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: fd5b3009-6595-4500-bac5-8b6129238722
-*** Element info: {Using=xpath, value=//lib.ui.android.widget.ImageView[@content-desc='More options']}
-	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:899)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:178)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-	... 38 more
-
-testSearchResultsContainKeyword(tests.SearchTests)  Time elapsed: 13.89 sec  <<< ERROR!
-org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 49 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: 66987aee-6428-4759-a0bc-c980fd9dacde
-*** Element info: {Using=id, value=id:org.wikipedia:id/page_list_item_title}
-	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:33)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:198)
-	at io.appium.java_client.DefaultGenericMobileElement.findElement(DefaultGenericMobileElement.java:49)
-	at io.appium.java_client.MobileElement.findElement(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.findElement(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.findElementById(RemoteWebElement.java:232)
-	at io.appium.java_client.DefaultGenericMobileElement.findElementById(DefaultGenericMobileElement.java:57)
-	at io.appium.java_client.MobileElement.findElementById(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.findElementById(AndroidElement.java:1)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:194)
-	at io.appium.java_client.DefaultGenericMobileElement.findElement(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.findElement(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.findElement(AndroidElement.java:1)
-	at lib.ui.MainPageObject.checkListElementsContainsString(MainPageObject.java:95)
-	at lib.ui.SearchPageObject.assertResultsContainKeyword(SearchPageObject.java:111)
-	at tests.SearchTests.testSearchResultsContainKeyword(SearchTests.java:93)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:177)
-	at junit.framework.TestCase.runBare(TestCase.java:142)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:130)
-	at junit.framework.TestSuite.runTest(TestSuite.java:241)
-	at junit.framework.TestSuite.run(TestSuite.java:236)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-
-testresultsTitleAndDescription(tests.SearchTests)  Time elapsed: 18.221 sec  <<< ERROR!
-org.openqa.selenium.TimeoutException: Timed out after 5 seconds: Result has wrong title or description compared to String and Wikimedia disambiguation page
-
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: 266cbb25-5e4c-433f-b598-a59e73e00218
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at lib.ui.MainPageObject.waitForElementPresent(MainPageObject.java:28)
-	at lib.ui.SearchPageObject.waitForElementByTitleAndDescription(SearchPageObject.java:120)
-	at tests.SearchTests.testresultsTitleAndDescription(SearchTests.java:114)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at junit.framework.TestCase.runTest(TestCase.java:177)
-	at junit.framework.TestCase.runBare(TestCase.java:142)
-	at junit.framework.TestResult$1.protect(TestResult.java:122)
-	at junit.framework.TestResult.runProtected(TestResult.java:142)
-	at junit.framework.TestResult.run(TestResult.java:125)
-	at junit.framework.TestCase.run(TestCase.java:130)
-	at junit.framework.TestSuite.runTest(TestSuite.java:241)
-	at junit.framework.TestSuite.run(TestSuite.java:236)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 49 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DESKTOP-K6GTNAI', ip: '192.168.1.119', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{appPackage=org.wikipedia, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, deviceUDID=emulator-5554, appActivity=.main.MainActivity, desired={appPackage=org.wikipedia, appActivity=.main.MainActivity, app=G:/Dev/JavaAppiumAutomation/apks/org.wikipedia.apk, platformVersion=8.1, automationName=Appium, platformName=Android, deviceName=and80}, platformVersion=8.1.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, takesScreenshot=true, javascriptEnabled=true, deviceModel=Android SDK built for x86, platformName=Android, deviceManufacturer=Google}]
-Session ID: 266cbb25-5e4c-433f-b598-a59e73e00218
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61891}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=95.0.4638.69 (6a1600ed572fedecd573b6c2b90a22fe6392a410-refs/branch-heads/4638@{#984}), userDataDir=C:\Users\khitr\AppData\Local\Temp\scoped_dir11056_442103585}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=95.0.4638.69, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 077c28f9f486003280025ca31b0c1dd7
 *** Element info: {Using=xpath, value=//lib.ui.android.widget.TextView[@text='Wikimedia disambiguation page']/../lib.ui.android.widget.TextView[@text='String']}
-	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:56)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:134)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:52)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:899)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:178)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-	... 37 more
+	at tests.SearchTests.testResultsTitleAndDescription_aroundBody14(SearchTests.java:157)
+	at tests.SearchTests.testResultsTitleAndDescription(SearchTests.java:141)
 

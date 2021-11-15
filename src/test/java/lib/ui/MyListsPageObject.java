@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -30,6 +31,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}",articleTitle);
   }
 
+  @Step("Open folder by name")
   public void openFolderByName(String nameOfFolder){
     //check to avoid mis click
     this.waitForElementPresent(
@@ -46,6 +48,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     );
   }
 
+  @Step("Delete the article from saved (using swipe for app)")
   public void swipeByArticleToDelete(String articleTitle){
     this.waitForArticleToAppearByTitle(articleTitle);
     String articleXpath = getSavedArticleXpathByTitle(articleTitle);
@@ -70,6 +73,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     this.waitForArticleToDisappearByTitle(articleTitle);
   }
 
+  @Step("Waiting for the article '{articleTitle}' in saved list")
   public void waitForArticleToAppearByTitle(String articleTitle){
 
     String articleXpath = getSavedArticleXpathByTitle(articleTitle);
@@ -80,6 +84,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     );
   }
 
+  @Step("Waiting the article not to be present")
   public void waitForArticleToDisappearByTitle(String articleTitle){
 
     String articleXpath = getSavedArticleXpathByTitle(articleTitle);
@@ -90,6 +95,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     );
   }
 
+  @Step("Open saved article")
   public void openSavedArticle(String articleTitle){
     String articleXpath = getSavedArticleXpathByTitle(articleTitle);
     this.waitForElementAndClick(
@@ -99,6 +105,7 @@ abstract public class MyListsPageObject extends MainPageObject{
     );
   }
 
+  @Step("Getting the name of the article in the list")
   public String getSavedArticleTitle(){
   WebElement element =   waitForElementPresent(
             LIST_ELEMENT,

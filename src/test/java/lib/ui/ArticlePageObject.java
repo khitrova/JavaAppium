@@ -1,7 +1,9 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 import lib.Platform;
+import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -27,12 +29,14 @@ abstract public class ArticlePageObject extends MainPageObject{
     super(driver);
   }
 
+  @Step("Waiting for title on the article page")
   public WebElement waitForTitleElement() {
     return this.waitForElementPresent(TITLE,
             "Cannot find article title",
             15);
   }
 
+  @Step("Getting article title without timeouts")
   public void instantTitleCheck() {
     if (Platform.getInstance().isAndroid()){
       this.assertElementPresent(
@@ -48,8 +52,10 @@ abstract public class ArticlePageObject extends MainPageObject{
 
   }
 
+  @Step("Get article title")
   public String getArticleTitle() {
     WebElement titleElement = waitForTitleElement();
+    screenshot(this.takeScreenshot("article_title"));
     if (Platform.getInstance().isAndroid()) {
       return titleElement.getAttribute("text");
     } else {
@@ -57,6 +63,7 @@ abstract public class ArticlePageObject extends MainPageObject{
     }
   }
 
+  @Step("Swiping to footer on the article page")
   public void swipeToFooter(){
     if (Platform.getInstance().isAndroid()) {
       this.swipeUpToFindElement(
@@ -73,6 +80,7 @@ abstract public class ArticlePageObject extends MainPageObject{
     }
   }
 
+  @Step("Adding article to my list")
   public void addArticleToMyList(String nameOfFolder){
     this.waitForElementAndClick(
             OPTIONS_BUTTON,
@@ -118,6 +126,7 @@ abstract public class ArticlePageObject extends MainPageObject{
     );
   }
 
+  @Step("Close article'")
   public void closeArticle(){
 
     if (Platform.getInstance().isAndroid()) {
@@ -130,7 +139,7 @@ abstract public class ArticlePageObject extends MainPageObject{
       System.out.println("Method closeArticle does nothing for platform "+ Platform.getInstance().getPlatformVar());
     }
   }
-
+@Step("Adding article to the existing article reading list")
   public void addArticleToExistingList(String nameOfFolder){
     this.waitForElementAndClick(
             OPTIONS_BUTTON,
@@ -157,6 +166,7 @@ abstract public class ArticlePageObject extends MainPageObject{
     );
   }
 
+  @Step("Adding the article to my saved articles")
   public void addArticleToMySaved(){
     if (Platform.getInstance().isMW()){
       this.removeArticleFromSavedIfItIsAdded();
@@ -164,6 +174,7 @@ abstract public class ArticlePageObject extends MainPageObject{
     this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON,"Cannot find option to add article to reading list", 5);
   }
 
+  @Step("Removing article from saved if it has been added")
   public void removeArticleFromSavedIfItIsAdded(){
     if (this.isElementPresent(OPTIONS_REMOVE_FROM_MT_LIST_BUTTON)){
       this.waitForElementAndClick(

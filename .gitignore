@@ -24,3 +24,5 @@ hs_err_pid*
 /.idea/vcs.xml
 target/allure-results/
 target/surefire-reports/
+target/surefire-reports/TEST-tests.ArticleTests.xml
+target/surefire-reports/tests.ArticleTests.txt
